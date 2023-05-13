@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Contexts/AuthProvider';
+import Spinner from '../Spinner/Spinner';
 
 const Login = () => {
-
+    const {userLogin}=useContext(AuthContext);
     const [loading,setLoading]=useState(false);
     const [loginError,SetLoginError]=useState('');
     const location =useLocation();
@@ -13,25 +15,28 @@ const Login = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
-        // setLoading(true);
-        // SetLoginError('')
-        // loginUser(data.email,data.password)
-        // .then(result=>{
-        //     const user=result.user;
-        //     console.log(user);
-        //     navigate(from,{replace:true});
-        //     setLoading(false);
-        // })
-        // .catch(error=>{
-        //     setLoading(false);
-        //     SetLoginError(error.message);
-        // });
+        // console.log(data);
+        setLoading(true);
+        SetLoginError('')
+        userLogin(data.email,data.password)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+            // navigate(from,{replace:true});
+            navigate('/')
+            setLoading(false);
+        })
+        .catch(error=>{
+            setLoading(false);
+            SetLoginError(error.message);
+        });
     };
-
+if(loading){
+    return <Spinner></Spinner>
+}
     return (
         <div class="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
-            <div class="hidden bg-cover lg:block lg:w-1/2" style={{ backgroundImage: `url('https://thumbs.dreamstime.com/b/group-friend-team-asian-young-women-hikers-walking-adventure-backpack-mountain-sunset-traveler-life-going-trip-139746558.jpg')`, backgroundPosition: 'center' }}></div>
+            <div class="hidden bg-cover lg:block lg:w-1/2" style={{ backgroundImage: `url('https://images.squarespace-cdn.com/content/v1/5d5c35d09c5b31000112bab9/1641416757389-D48QLLSV9Q5AHKAYS64C/Cafecito-alfajorcitos-PHKGuevara.jpg?format=2500w')`, backgroundPosition: 'center' }}></div>
 
             <div class="w-full px-6 py-8 md:px-8 lg:w-1/2">
                 <div class="flex justify-center mx-auto">
