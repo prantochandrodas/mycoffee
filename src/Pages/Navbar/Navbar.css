@@ -1,0 +1,24 @@
+.NavSticky{
+    /* background:linear-gradient(to right, #1a2a6c, #b21f1f, #1a2a6c); */
+    background-color: #212121;
+    z-index:2;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+  }
+  @media (max-width:480px) {
+    .mobileNavSticky{
+      
+      /* background:white; */
+      z-index:2;
+      position: sticky;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    .textBlack {
+      color: black;
+    }
+  }
