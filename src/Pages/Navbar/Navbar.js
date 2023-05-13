@@ -26,7 +26,7 @@ const Navbar = () => {
                 <div className="flex items-center justify-between py-3 md:py-5 md:block">
                     <a href="javascript:void(0)">
                         <img
-                            //   src={logo} 
+                              src='https://images.squarespace-cdn.com/content/v1/5d5c35d09c5b31000112bab9/1612419761339-JJJEVBO588CVF0REACOU/logo-cafecito-red-transparent.png?format=1500w' 
                             width={120}
                             height={50}
                             alt="Float UI logo"

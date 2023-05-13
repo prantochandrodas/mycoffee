@@ -1,0 +1,16 @@
+.carousel {
+    width: 100%;
+    height: 500px!important;
+}
+.carousel_child img{
+    height: 500px!important;
+}
+@media only screen and (max-width:688px) {
+    .carousel {
+        height: 280px!important;
+    }
+
+    .carousel_child img {
+        height: 280px!important;
+    }
+}
