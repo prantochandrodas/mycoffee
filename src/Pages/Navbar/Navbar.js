@@ -4,6 +4,7 @@ import './Navbar.css'
 import { AuthContext } from '../Contexts/AuthProvider';
 const Navbar = () => {
     const [state, setState] = useState(false);
+   
     const { userLogout, user } = useContext(AuthContext);
     console.log(user)
     const navigate = useNavigate();
@@ -12,12 +13,13 @@ const Navbar = () => {
             .then(() => {
                 // console.log('hi')
                 navigate('/login')
+                setState(!state);
             })
 
     }
     const menu = <>
         <Link to='/' onClick={() => setState(!state)}> <li className='lg:ml-5 text-lg lg:mt-0 mt-4  font-[500]'>Home</li></Link>
-        <Link to='/login' onClick={() => setState(!state)}> <li className='lg:ml-5 text-lg lg:mt-0 mt-4 font-[500]'>Menu</li></Link>
+        <Link to='/menu' onClick={() => setState(!state)}> <li className='lg:ml-5 text-lg lg:mt-0 mt-4 font-[500]'>Menu</li></Link>
 
     </>
     return (
@@ -65,8 +67,8 @@ const Navbar = () => {
                     }
                     {
                         user?.uid ? <button className="btn bg-[orange] btn-sm" onClick={handelLogout}>Logout</button> : <>
-                            <Link to='/signUp'> <button className="btn bg-[orange] btn-sm">SignUp</button> </Link>
-                            <Link to='/login'> <button className="btn bg-[orange] btn-sm ml-2">Login</button> </Link>
+                            <Link to='/signUp'> <button className="btn bg-[orange] btn-sm" onClick={() => setState(!state)}>SignUp</button> </Link>
+                            <Link to='/login'> <button className="btn bg-[orange] btn-sm ml-2" onClick={() => setState(!state)}>Login</button> </Link>
                         </>
                     }
 

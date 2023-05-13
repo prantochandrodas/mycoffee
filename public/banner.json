@@ -1,24 +1,38 @@
 [
     {
-      "_id": "6455fa5e2621db8815cf5f93",
-      "index": 0,
-      "picture": "https://images.squarespace-cdn.com/content/v1/5d5c35d09c5b31000112bab9/1646422916122-GGH45KWIIQW2PH5FHJHL/FebBreakfastShoot-9.jpeg?format=2500w",
-      "about":"cafecito",
-      "title": "COFFEE HOUSE & RESTAURANT AT THE TRAILHEAD"
+      "balance": "$85",
+      "picture": "https://static01.nyt.com/images/2015/10/02/fashion/02CAPP3SUB/02CAPP3SUB-superJumbo.jpg",
+      "name": "cappuccino",
+      "about": "A cappuccino is the perfect balance of espresso, steamed milk and foam. This coffee is all about the structure and the even splitting of all elements into equal thirds. An expertly made cappuccino should be rich, but not acidic and have a mildly sweet flavouring from the milk."
     },
     {
-        "_id": "6455fa5e2621db8815cf5f93",
-        "index": 0,
-        "picture": "https://images.squarespace-cdn.com/content/v1/5d5c35d09c5b31000112bab9/1608226299093-K1U2D3HBTSZOGU6362E1/_DSC4969-Edit.jpg?format=2500w",
-        "about":"cafecito",
-        "title": "COFFEE HOUSE & RESTAURANT AT THE TRAILHEAD"
-      },
-      {
-        "_id": "6455fa5e2621db8815cf5f93",
-        "index": 0,
-        "picture": "https://images.squarespace-cdn.com/content/v1/5d5c35d09c5b31000112bab9/1624898271758-KQSJCG82Q5BWXQ5GF28D/CafecitoMay2021-16.jpeg?format=2500w",
-        "about":"cafecito",
-        "title": "COFFEE HOUSE & RESTAURANT AT THE TRAILHEAD"
-      }
-   
+      "balance": "$105",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsgHd75YvHaviQ9uuYson2SnPvCPyTKm_k5iZr9-5hXca-s6XPjjbJ_VVLshQa6XCGdLY&usqp=CAU",
+      "name": "Margarita Rosa",
+      "about": "latte begins with the same base — a single or double shot of espresso. This espresso is then combined with several ounces of steamed milk to create a rich, creamy beverage that has a more subtle espresso taste. The typical ratio for espresso to steamed milk is about 1-to-2"
+    },
+    {
+      "balance": "$89.03",
+      "picture": "https://www.acouplecooks.com/wp-content/uploads/2021/08/How-to-make-espresso-009s.jpg",
+      "name": "espresso",
+      "about": "Espresso is a concentrated form of coffee, served in shots. It's made of two ingredients - finely ground, 100% coffee, and hot water."
+    },
+    {
+      "balance": "$50.03",
+      "picture": "https://i.ytimg.com/vi/P67qnl9Eu54/maxresdefault.jpg",
+      "name": "honey mint tea",
+      "about": "Mint tea is a herbal tea made by infusing mint leaves in hot water. "
+    },
+    {
+      "balance": "$33",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZg_w9o5Kx9362Wxdcrrl8-LgX6jmT3Xjf9wMzT9GcTDtRslv0ZSDs2mlACYffibLzD-E&usqp=CAU",
+      "name": "Lemon-ginger",
+      "about": "Lemon-ginger tea is exactly what it sounds like: a gentle herbal infusion of fresh lemon and ginger — with a bit of sweetener like honey or agave nectar, if you so choose. You might be wondering if lemon-ginger tea has any unique health benefits."
+    },
+    {
+      "balance": "$49.22",
+      "picture": "https://sallysbakingaddiction.com/wp-content/uploads/2013/04/triple-chocolate-cake-4.jpg",
+      "name": "cake",
+      "about": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent "
+    }
   ]

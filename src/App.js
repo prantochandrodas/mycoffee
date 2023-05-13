@@ -5,6 +5,8 @@ import Main from './Pages/Main/Main';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
+import Menus from './Pages/Menus/Menus';
+import PriveteRoute from './Pages/PriveteRoute/PriveteRoute';
 
 function App() {
   const router=createBrowserRouter([
@@ -23,6 +25,12 @@ function App() {
           {
             path:'/signUp',
             element:<SignUp></SignUp>
+          },
+          {
+            path:"/menu",
+            element:<PriveteRoute>
+              <Menus></Menus>
+            </PriveteRoute>
           }
         ]
       }

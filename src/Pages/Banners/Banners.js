@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '../Banner/Banner';
 import Slider from 'react-slick';
+import Spinner from '../Spinner/Spinner';
 
 const Banners = () => {
     const [datas,setDatas]=useState([]);
+    const [loading,setLoading]=useState(false);
     useEffect(()=>{
-        fetch('banner.json')
+        setLoading(true);
+        fetch('https://mycoffee-server.vercel.app/banners')
         .then(res=>res.json())
-        .then(result=>setDatas(result))
+        .then(result=>{
+            setDatas(result); 
+            setLoading(false);
+        })
     },[]);
+    if(loading){
+        return <Spinner></Spinner>
+    }
     function SamplePrevArrow(props) {
         const { className, style, onClick } = props;
         return (

@@ -3,14 +3,15 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider';
 import Spinner from '../Spinner/Spinner';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const {userLogin}=useContext(AuthContext);
+    const {userLogin,createUserWithGoogle}=useContext(AuthContext);
     const [loading,setLoading]=useState(false);
     const [loginError,SetLoginError]=useState('');
     const location =useLocation();
     const navigate=useNavigate();
-    // const provider = new GoogleAuthProvider();
+     const provider = new GoogleAuthProvider();
     const from =location.state?.from?.pathname || '/';
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
@@ -22,8 +23,7 @@ const Login = () => {
         .then(result=>{
             const user=result.user;
             console.log(user);
-            // navigate(from,{replace:true});
-            navigate('/')
+             navigate(from,{replace:true});
             setLoading(false);
         })
         .catch(error=>{
@@ -31,6 +31,21 @@ const Login = () => {
             SetLoginError(error.message);
         });
     };
+
+    const handelGoogleSignUp=()=>{
+        setLoading(true);
+        createUserWithGoogle(provider)
+        .then(result=>{
+            const user=result.user;
+            console.log(user);
+            navigate(from,{replace:true});
+            setLoading(false);
+        })
+        .catch(error=>{
+            SetLoginError(error.message);
+            setLoading(false);
+        })
+    }
 if(loading){
     return <Spinner></Spinner>
 }
@@ -57,7 +72,7 @@ if(loading){
                         </svg>
                     </div>
 
-                    {/* <span class="w-5/6 px-4 py-3 font-bold text-center" onClick={handelGoogleSignUp}>Sign in with Google</span> */}
+                    <span class="w-5/6 px-4 py-3 font-bold text-center" onClick={handelGoogleSignUp}>Sign in with Google</span>
                 </a>
                 {loginError?<p className='text-red-600'>{loginError}</p>:<></>}
                 {/* email  */}
